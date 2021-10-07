@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concrete.Category  /*model içağırıyoruz. entity layer içindeki concrete içindeki category yi çağırıyoruz*/
+
+@{
+    ViewBag.Title = "EditCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<br />
+
+<h2>Kategori Güncelleme Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("EditCategory", "AdminCategory", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Kategory ID")
+    @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" })
+    <br /> <br />
+    @Html.Label("Kategory Adı")
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    <br /> <br />
+    @Html.Label("Kategori Açıklaması")
+    @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</div>
+}
+

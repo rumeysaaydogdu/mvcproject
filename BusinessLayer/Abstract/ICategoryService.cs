@@ -1,0 +1,19 @@
+﻿using EntityLayer.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BusinessLayer.Abstract
+{
+    public interface ICategoryService
+    {
+        List<Category> GetList();  // önce interface kısmnda metodu tanımla sonra sınıf tarafında (categoryManager) içini doldur
+        void CategoryAdd(Category category);
+        Category GetByID(int id);
+        void CategoryDelete(Category category);
+
+        void CatgeoryUpdate(Category category);
+    }
+}
